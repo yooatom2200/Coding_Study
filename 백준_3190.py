@@ -8,14 +8,14 @@ turn = "r"
 
 #보드크기, 뱀 = 1, 사과 = 2. 빈공간 = 0
 N = int(input())
-board = [[0 for i in range (N)] for j in range (N)]
+board = [[0 for i in range (N)] for i in range (N)]
 board[hx][hy] = 1
 
 #사과개수, 위치설정
 apple = int(input())
 for i in range(apple):
     aX, aY = map(int, input().split())
-    board[aX-1][aY-1] = 2
+    board[aX - 1][aY - 1] = 2
 
 #뱀 방향변환 정보
 L = int(input())
@@ -38,6 +38,10 @@ while(True):
     else:
         hx = hx + 1
 
+    #머리가 보드 밖으로 진출시
+    if not 0 <= hx < N or not 0 <= hy < N:
+        break
+
     #머리 위치한곳 확인(빈곳 or 사과 or 몸통)
     if board[hx][hy]  == 0:
         board[hx][hy] = 1
@@ -49,14 +53,6 @@ while(True):
         snake.append([hx,hy])
     else:
         break
-
-    #머리가 보드 밖으로 진출시
-    if not 0 <= hx < N or not 0 <= hy < N:
-        break
-    
-    print("--------", time)
-    for i in range(N):
-        print(board[i])
 
     #뱀 방향전환
     for i in range(L):
