@@ -5,3 +5,4 @@ area = [[0 for _ in range (N)] for _ in range (M)]
 for i in range (N):
     area[i] = map(int, input().split())
 
+#바이러스 경로
