@@ -23,3 +23,28 @@ def dfs(V, ck, x, y):
         if y+1 < M and ck[x][y+1] == 0 and V[x][y+1] != 1:
             dfs(V, ck, x, y+1)
     return V
+
+    # 안전지대와 바이러스의 위치를 파악합니다.
+zeros = []
+virus = []
+for i in range(N):
+    for j in range(M):
+        if Vt[i][j] == 0:
+            zeros.append((i,j))
+        if Vt[i][j] == 2:
+            virus.append((i,j))
+
+# 벽을 세우는 부분
+def blocking(Vx, ck, zeros):
+    # comination 조합에 따라 벽을 세움
+    for i, j in coms:
+        Vx[i][j] = 1
+    # 바이러스가 퍼짐
+    for i, j in virus:
+        Vx = dfs(Vx, ck, i, j)
+    # 안전지대의 수 세기
+    cnt = 0
+    for i in range(N):
+        for j in range(M):
+            if Vx[i][j] == 0 : cnt+=1
+    return cnt
