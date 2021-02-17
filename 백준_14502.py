@@ -50,8 +50,8 @@ def blocking(Vx, ck, zeros):
     return cnt
 
     max_zero = 0
-# 순열조합을 활용하여 벽을 막을 수 있는 경우를 모두 고려
-# 해당 부분이 비효율적인 경향이 있음
+
+
 for coms in combinations(zeros, 3):
     # 값이 변하면 안되므로 deepcopy()를 활용
     # copy 모듈을 사용할 수 없다면 
