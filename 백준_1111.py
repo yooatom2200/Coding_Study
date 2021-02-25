@@ -1,2 +1,2 @@
 #문제풀이
-print
+print("Hello World!")
