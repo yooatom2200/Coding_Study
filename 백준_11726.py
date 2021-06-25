@@ -12,3 +12,4 @@ else:
     for i in range(3,num+1):
         data[i] = data[i-1] + data[i-2]
     print(data[num] % 10007)
+
