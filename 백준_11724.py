@@ -1,3 +1,8 @@
+'''
+간선문제
+dfs나 bfs로 탐색하여 연결요소를 구한다
+'''
+
 import sys
 sys.setrecursionlimit(10000)#재귀함수 제한 1000회에서 증가
 
