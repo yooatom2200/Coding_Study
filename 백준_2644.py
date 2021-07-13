@@ -13,8 +13,8 @@ data = [0 for _ in range(num)]
 
 for _ in range(num):
     a, b = map(int, sys.stdin.readline().split())
-    path[a].append(b)
-    path[b].append(a)
+    path[a-1].append(b-1)
+    path[b-1].append(a-1)
 
 def bfs(start, end):
     matrix = deque()
