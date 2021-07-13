@@ -2,6 +2,7 @@
 백준_2644 촌수계산
 트리처럼 생각하지말고 이웃간 계산으로 생각하면 편함
 bfs적용
+오타 꼭 확인 제발...
 '''
 import sys
 from collections import deque
