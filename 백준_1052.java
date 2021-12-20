@@ -24,7 +24,7 @@ public class 백준_1052 {
 			System.out.println(0);
 		}
         else {
-			for(int i=0; i<binaryN.length(); i++) {
+			for(int i=0; i<binaryN.length(); i++) {// 2진 자리수 계산
 				if(binaryN.charAt(i) == '1') {
 					cnt++;
 					if(cnt == b) {
@@ -36,7 +36,7 @@ public class 백준_1052 {
 			String stringAnswer = binaryN.substring(point);
 			int answer = Integer.parseInt(stringAnswer, 2);
 			int temp = 0;
-			for(int i=0; i<binaryN.length()-point; i++) {
+			for(int i=0; i<binaryN.length()-point; i++) {// 계산한 자리수만큼 시프트연산
 				temp = temp << 1;
 				temp = temp+1;
 			}
