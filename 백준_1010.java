@@ -11,22 +11,23 @@ public class 백준_1010 {
     public static void main(String[] args) throws IOException{
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int testcase = Integer.parseInt(bf.readLine());
-        int[] answers = new int[testcase];
+        long[] answers = new long[testcase];
         for(int i = 0; i < testcase; i++){
-            String[] pnc = bf.readLine().split(" ");
-            int n = Integer.parseInt(pnc[0]);
-            int r = Integer.parseInt(pnc[1]);
+            String[] ncr = bf.readLine().split(" ");
+            int n = Integer.parseInt(ncr[0]);
+            int r = Integer.parseInt(ncr[1]);
             if(n < r){
                 int tmp = n;
                 n = r;
                 r = tmp;
             }
-
-            int top = 1;
-            for(int j = n; j <= n-r+1; j--){
+            if(n/2 < r)
+                r = n - r;
+            long top = 1;
+            for(int j = n; j >= n-r+1; j--){
                 top *= j;
             }
-            int bottom = fact(r);
+            long bottom = fact(r);
             answers[i] = top / bottom;
         }
         for(int i = 0; i < testcase; i++){
@@ -34,9 +35,9 @@ public class 백준_1010 {
         }
     }
 
-    public static int fact(int a){//팩토리얼재귀함수
+    public static long fact(long a){//팩토리얼재귀함수
         if(a <= 1)
-            return a;
+            return 1;
         else
             return fact(a-1) * a;
     }
