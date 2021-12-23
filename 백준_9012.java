@@ -10,9 +10,23 @@ public class 백준_9012 {
         for(int i = 0; i < count; i++){
             testcase[i] = bf.readLine();
         }
-        System.out.println("출력시작");
         for(int i = 0; i < count; i++){
-            System.out.println(testcase[i]);
+            int isVPS = 0;
+            int judge = 1;
+            for(int j = 0; j < testcase.length; j++){
+                if(judge == 0)
+                    continue;
+                if(testcase[i].charAt(j) == '(')
+                    isVPS += 1;
+                else if(testcase[i].charAt(j) == ')')
+                    isVPS -= 1;               
+                if(isVPS < 0)
+                    judge = 0;
+            }
+            if(judge == 1)
+                System.out.println("YES");
+            else
+                System.out.println("NO");
         }
     }
 }
