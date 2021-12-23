@@ -7,13 +7,15 @@ public class 백준_9012 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int count  = Integer.parseInt(bf.readLine());
         String testcase[] = new String[count];
+
         for(int i = 0; i < count; i++){
             testcase[i] = bf.readLine();
         }
+
         for(int i = 0; i < count; i++){
             int isVPS = 0;
             int judge = 1;
-            for(int j = 0; j < testcase.length; j++){
+            for(int j = 0; j < testcase[i].length(); j++){
                 if(judge == 0)
                     continue;
                 if(testcase[i].charAt(j) == '(')
@@ -23,6 +25,8 @@ public class 백준_9012 {
                 if(isVPS < 0)
                     judge = 0;
             }
+            if(isVPS != 0)
+                judge = 0;
             if(judge == 1)
                 System.out.println("YES");
             else
