@@ -3,8 +3,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 public class 백준_1260 {
-    public static int[][] arr;
-	public static boolean[] visited;
+    public static int[][] arr;//목록저장소
+	public static boolean[] visited;//방문여부
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
