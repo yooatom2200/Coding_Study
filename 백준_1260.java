@@ -56,7 +56,6 @@ public class 백준_1260 {
  		System.out.print(start+ " ");
 		
 		while(!que.isEmpty()) {
-			
 			int temp = que.peek();
 			que.poll();
 			for(int i=1; i<arr.length;i++) {
@@ -68,5 +67,4 @@ public class 백준_1260 {
 			}
 		}
 	}
-    
 }
