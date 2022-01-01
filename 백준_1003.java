@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class 백준_1003 {
-    static int tcase = 0;
     static int zCount = 0;
     static int oCount = 0;
     static int fibonacci(int a){
@@ -19,9 +18,8 @@ public class 백준_1003 {
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        tcase = sc.nextInt();
 
-        for(int i = 0; i < tcase; i++){
+        for(int i = 0; i < sc.nextInt(); i++){
             fibonacci(sc.nextInt());
             System.out.printf("%d %d\n", zCount, oCount);
             zCount = 0;
