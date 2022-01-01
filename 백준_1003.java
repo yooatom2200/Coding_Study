@@ -25,5 +25,7 @@ public class 백준_1003 {
             }
             bw.write(num0[num] + " " +num1[num] + "\n");
         }
+        br.close();
+        bw.close();
     }
 }
