@@ -1,31 +1,29 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class 백준_1003 {
-    static int tcase = 0;
-    static int zCount = 0;
-    static int oCount = 0;
-    static int fibonacci(int a){
-        if (a == 0){
-            zCount += 1;
-            return 0;
-        }
-        else if (a == 1){
-            oCount += 1;
-            return 1;
-        }
-        else{
-            return fibonacci(a-1) + fibonacci(a-2);
-        }
-    }
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        tcase = sc.nextInt();
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int num;
+        int[] num0=new int[41];
+        int[] num1=new int[41];
+        num0[0] = 1;
+        num0[1] = 0;
+        num1[0] = 0;
+        num1[1] = 1;
+        int tcase = Integer.parseInt(br.readLine());
+        
         for(int i = 0; i < tcase; i++){
-            fibonacci(sc.nextInt());
-            System.out.printf("%d %d\n", zCount, oCount);
-            zCount = 0;
-            oCount = 0;
+            num = Integer.parseInt(br.readLine());
+            for(int j=2; j<=num; j++) {
+                num0[j] = num0[j-2] + num0[j-1];
+                num1[j] = num1[j-2] + num1[j-1];
+            }
+            bw.write(num0[num] + " " +num1[num] + "\n");
         }
     }
 }
