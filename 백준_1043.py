@@ -18,5 +18,4 @@ for _ in range(M):
     else:
         partyCount += 1
 
-print(many)
 print(partyCount)
