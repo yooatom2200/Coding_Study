@@ -1,21 +1,27 @@
 N, M = map(int, input().split())
-many = list(map(int,input().split()))[1:]
-partyCount = 0
+known = list(map(int,input().split()))[1:]
+parties = list()
+isVisit = [0] * N
 
+for i in known:
+    isVisit[i] = 1
+
+partyTrue = [0] * M
 for _ in range(M):
-    inData = list(map(int,input().split()))
-    inData = inData[1:]
-    checkIn = 0
+    parties.append(list(map(int, input().split()))[1:])
 
-    for i in inData:
-        if i in many:
-            checkIn = 1
+while known:
+    guest = known.pop()
+    include = set()
+    for partyIdx in range(M):
+        party = set(parties[partyIdx])
+        if guest in party:
+            include = include.union(party)
+            partyTrue[partyIdx] = 1
 
-    if checkIn == 1:
-        for i in inData:
-            many.append(i)
-            many = list(set(many))
-    else:
-        partyCount += 1
+    for i in include:
+        if not isVisit[i - 1]:
+            known.append(i)
+            isVisit[i - 1] = 1
 
-print(partyCount)
+print(partyTrue.count(0))
