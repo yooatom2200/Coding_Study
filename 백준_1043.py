@@ -4,7 +4,7 @@ parties = list()
 isVisit = [0] * N
 
 for i in known:
-    isVisit[i] = 1
+    isVisit[i-1] = 1
 
 partyTrue = [0] * M
 for _ in range(M):
