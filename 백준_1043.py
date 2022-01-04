@@ -1,12 +1,14 @@
 N, M = map(int, input().split())
 known = list(map(int,input().split()))[1:]
 parties = list()
+partyTrue = [0] * M
 isVisit = [0] * N
 
 for i in known:
     isVisit[i-1] = 1
 
-partyTrue = [0] * M
+
+
 for _ in range(M):
     parties.append(list(map(int, input().split()))[1:])
 
