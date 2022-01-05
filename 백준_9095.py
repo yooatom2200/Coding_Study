@@ -10,5 +10,7 @@ def fib(a):
     triple[a] = fib(a-1) + fib(a-2) + fib(a-3)
     return triple[a]
 
+count = int(input())
 triple = [0] * 11
-print(fib(int(input())))
+for _ in range(count):
+    print(fib(int(input())))
