@@ -6,8 +6,18 @@
 s1 = input()
 s2 = input()
 
-i = len(s1) + 1
-j = len(s2) + 1
+si = len(s1) + 1
+sj = len(s2) + 1
 
-LCS = [[0] * j] * i
+LCS = [[0] * sj] * si
 
+for i in range(si):
+    for j in range(sj):
+        if i == 0 or j == 0:
+            continue
+        elif s1[i-1] == s2[j-1]:
+            LCS[i][j] = LCS[i-1][j-1] + 1
+        elif s1[i-1] != s2[j-1]:
+            LCS[i][j] = LCS[i-1][j] if LCS[i-1][j] >= LCS[i][j-1] else LCS[i][j-1]
+
+print(max(max(LCS)))
