@@ -20,4 +20,4 @@ for i in range(si):
         elif s1[i-1] != s2[j-1]:
             LCS[i][j] = LCS[i-1][j] if LCS[i-1][j] >= LCS[i][j-1] else LCS[i][j-1]
 
-print(max(max(LCS)))
+print(LCS[-1][-1])
