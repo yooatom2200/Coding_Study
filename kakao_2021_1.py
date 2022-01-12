@@ -20,7 +20,7 @@ for i in s:
         answer.append(str(i))
     else:
         a.append(i)
-    if "".join(a) in nums:
+    if "".join(a) in nums:#"".join으로 문자열로 변환
         answer.append(nums["".join(a)])
         a.clear()
 print("".join(answer))
