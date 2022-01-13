@@ -13,7 +13,11 @@ for i in words:
             count[j] = 10 ** (wlen - 1)
         wlen -= 1
 
+
+
 total = 0
 start = 9
-print(count)
+count = sorted(count, reverse=True)
+for i in total:
+    print(i)
             
