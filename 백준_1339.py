@@ -14,10 +14,12 @@ for i in words:
         wlen -= 1
 
 
-
+#print(count)
 total = 0
 start = 9
-count = sorted(count, reverse=True)
-for i in total:
-    print(i)
-            
+count = sorted(count.items(), key = (lambda x:x[1]), reverse=True)
+for i in count:
+    total += i[1] * start
+    start -= 1
+
+print(total)
