@@ -1,6 +1,7 @@
 def solution(phone_book):
-    test = phone_book.pop(0)
-    for i in phone_book:
-        if test == i[:len(test)]:
-            return False
+    phone_book.sort()
+    for i in range(len(phone_book)):
+        if i < len(phone_book) - 1:
+            if phone_book[i] == phone_book[i+1][:len(phone_book[i])]:
+                       return False
     return True
