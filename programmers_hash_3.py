@@ -9,7 +9,7 @@ def solution(clothes):
         if i[1] in category:
             category[i[1]] += 1
         else:
-            category[i[1]] = 1
+            category[i[1]] = 1ß
             
     rst = 1
     for i in category.values():
