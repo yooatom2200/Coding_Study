@@ -1,3 +1,6 @@
+"""
+기본적인 정렬문제.
+"""
 def solution(array, commands):
     answer = []
     for command in commands:
