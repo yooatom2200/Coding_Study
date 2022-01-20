@@ -1,3 +1,7 @@
+"""
+노가다 문제. 쉬움
+"""
+
 def solution(answers):
     answer = []
     p1 = [1,2,3,4,5]
