@@ -1,3 +1,6 @@
+"""
+판단의 최적화를 생각해야한다
+"""
 def solution(begin, target, words):
     q = [begin]
     visit = [0] * len(words)
