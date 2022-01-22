@@ -1,31 +1,37 @@
-def dfs(begin, target, visit, words, count):
-    if begin == target:
-        return count
-    elif sum(visit) == len(words):
-        return 0
-    count += 1
-    begin_split = list(begin)
-    almost_same = [0] * len(words)
-    for i in range(len(words)):
-        if visit[i] == 0:
-            wds_split = list(words[i])
-            for t1, t2 in zip(begin_split, wds_split):
-                print(t1, t2)
-                if t1 == t2 :
-                    almost_same[i] += 1
-    print(visit)
-    print(almost_same)
-    for i in range(len(almost_same)):
-        if almost_same[i] == max(almost_same) and visit[i] == 0:
-            dfs(words[i], target, visit, words, count)
-            visit[i] = 1
+"""
+bfs로 풀어야된다... dfs 재귀로 하면 넘나 깊어지나?
+또 나왔다... 깊은복사 조심하기
+"""
+def bfs(begin, target, words):
+    q = [begin]
+    visit = [0] * len(words)
+    count = 0
+    while True:
+        if target in q:
+            return count
+        elif sum(visit) == len(words):
+            return 0
+        
+        tmp_q = [i for i in q]
+        q = []
+        for tmp_w in tmp_q:
+            if tmp_w == target:
+                return count
+            tmp_list = list(tmp_w)
+            for word_index in range(len(words)):
+                same_count = 0
+                word_list = list(words[word_index])
+                for i, j in zip(word_list, tmp_list):
+                    if i == j :
+                        same_count += 1
+                if same_count == len(target) - 1 and visit[word_index] == 0:
+                    visit[word_index] = 1
+                    q.append(words[word_index])
+        count += 1
 
 def solution(begin, target, words):
-    visit = [0] * len(words)
-    answer = dfs(begin, target, visit, words, 0)
-    return answer
-
-            
+    return bfs(begin, target, words)
+ 
 begin = "hit"
 target = "cog"
 words = ["hot", "dot", "dog", "lot", "log", "cog"]
