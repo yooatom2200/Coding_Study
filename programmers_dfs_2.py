@@ -1,3 +1,7 @@
+"""
+dfs 연산 적용시 가장 바깥쪽을 카운트
+"""
+
 def solution(n, computers):
     visit = [0] * n
     answer = 0
