@@ -10,7 +10,7 @@ for i in range(N):
 
 matrix_a = copy.deepcopy(matrix)
 matrix_b = copy.deepcopy(matrix)
-#가로열 변화시 비교
+#1차 비교
 for i in range(N):
     compare_a = 0
     compare_b = 0
@@ -25,6 +25,23 @@ for i in range(N):
     if compare_b > half_N:
         for j in range(N):
             matrix_b[j][i] = 1 - matrix_b[j][i]
+
+#2차 비교
+for i in range(N):
+    compare_a = 0
+    compare_b = 0
+    for j in range(N):
+        compare_a += matrix_a[j][i]
+        compare_b += matrix_b[i][j]
+
+    if compare_a > half_N:
+        for j in range(N):
+            matrix_a[j][i] = 1 - matrix_a[j][i]
+
+    if compare_b > half_N:
+        for j in range(N):
+            matrix_b[i][j] = 1 - matrix_b[i][j]
+
 
 a = sum(sum(matrix_a, []))
 b = sum(sum(matrix_b, []))
