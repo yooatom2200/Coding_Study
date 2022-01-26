@@ -1,17 +1,17 @@
 N = int(input())
 schedule = []
+book = []
 for _ in range(N):
     a, b = map(int, input().split())
     schedule.append([a, b])
 
 schedule.sort(key = lambda x : x[1])
-answer, max_day = schedule.pop(-1)
-count = 1
-schedule.sort(key = lambda x : x[0], reverse=True)
+print(schedule)
 while schedule:
-    if count == max_day:
-        break
-    answer += schedule.pop(0)[0]
-    count += 1
+    pay, max_day = schedule.pop(0)
+    book.append([pay, max_day])
+    book.sort(key = lambda x : x[0])
+    if len(book) > max_day:
+        print(book.pop(0), max_day)
 
-print(answer)
+print(book)
