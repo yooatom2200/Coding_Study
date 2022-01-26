@@ -1,11 +1,9 @@
 N = int(input())
 nums = list(map(int, input().split()))
 bigline = []
-while nums:
-    num = nums.pop(0)
-    if num in bigline:
+for i in nums:
+    if i in bigline:
         continue
-    bigline.append(num)
+    bigline.append(i)
 
 print(len(bigline))
-    
