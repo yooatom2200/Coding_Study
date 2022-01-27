@@ -1,3 +1,7 @@
+"""
+lower bound 써야된대..
+첨보는데 일단 알아보고 해보자
+"""
 N = int(input())
 nums = list(map(int, input().split()))
 bigline = []
