@@ -1,22 +1,16 @@
+"""
+배열에 삽입시키면서 풀면 쉽게 풀린다.
+"""
+
 def solution(s):
     s_split = list(s)
-    idx = 0
-    answer = 0
-    while s_split:
-        if idx >= len(s_split) - 1:
-            break
-            
-        a = s_split[idx]
-        if s_split[idx] == s_split[idx+1]:
-            s_split.pop(idx)
-            s_split.pop(idx)
-            idx = 0
-        else:
-            idx += 1
-    
-    if len(s_split) == 0:
-        answer = 1
+    a = []
+    for i in s_split:
+        a.append(i)
+        if len(a) < 2:
+            continue
+        if a[-1] == a[-2]:
+            a.pop()
+            a.pop()
 
-    return answer
-
-solution(input())
+    return 1 if len(a) == 0 else 0
