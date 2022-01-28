@@ -14,3 +14,5 @@ def solution(s):
             a.pop()
 
     return 1 if len(a) == 0 else 0
+
+print(solution(input()))
