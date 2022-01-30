@@ -6,7 +6,6 @@ for _ in range(m):
     graph[a-1].append(b-1)
     graph[b-1].append(a-1)
 
-print(graph)
 cnt = 0
 visited = [0]*(n)
 def dfs(start):
@@ -16,6 +15,6 @@ def dfs(start):
         if visited[i]==0:
             dfs(i)
             cnt +=1
- 
+
 dfs(1-1)
 print(cnt)
