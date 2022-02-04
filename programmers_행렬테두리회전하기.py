@@ -39,7 +39,7 @@ for q in queries:
         matrix[x_now][y_now+1] = matrix[x_now][y_now]
         if matrix[x_now][y_now] < minimum:
             minimum = matrix[x_now][y_now]
-    matrix[x_min+1][y_min] = tmp
+    matrix[x_min][y_min+1] = tmp
     answer.append(minimum)
 
 print(answer)
