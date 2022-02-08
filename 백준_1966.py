@@ -19,3 +19,4 @@ for _ in range(count):
         else:
             notes.append(notes.pop(0))
             notes_index.append(notes_index.pop(0))
+            
