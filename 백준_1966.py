@@ -14,9 +14,9 @@ for _ in range(count):
             if notes_index[0] == note:
                 print(seq)
                 break
+            
             notes.pop(0)
             notes_index.pop(0)
         else:
             notes.append(notes.pop(0))
             notes_index.append(notes_index.pop(0))
-            
