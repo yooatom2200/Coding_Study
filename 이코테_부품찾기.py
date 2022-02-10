@@ -1,9 +1,9 @@
 N = int(input())
 product = list(map(int, input().split()))
 product.sort()
+
 M = int(input())
 s_product = list(map(int, input().split()))
-
 
 def bs(start, end, search):
     while start <= end:
